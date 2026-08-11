@@ -2,6 +2,7 @@ import speech_recognition as sr
 import webbrowser 
 import subprocess
 import sounddevice as sd
+import Music_Library
 
 recognizer = sr.Recognizer()
 
@@ -18,7 +19,18 @@ def speak(text):
     )
 
 def processCommand(c):
-    pass
+    if "open google" in c.lower():
+        webbrowser.open("https://google.com")
+    elif "open facebook" in c.lower():
+        webbrowser.open("https://facebook.com")
+    elif "open youtube" in c.lower():
+        webbrowser.open("https://youtube.com")
+    elif "open instagram" in c.lower():
+        webbrowser.open("https://instagram.com")
+    elif "open linkedin" in c.lower():
+        webbrowser.open("https://linkedin.com")
+    elif "open spotify" in c.lower():
+        webbrowser.open("https://spotify.com")
 
 def listen():
     sample_rate = 16000
@@ -66,19 +78,3 @@ if __name__ == "__main__":
 
         except Exception as e:
             print(f"Error; {e}")
-        
-
-# try:
-#     with sr.Microphone() as source:
-#         print("Listening...")
-#         audio = r.listen(source, timeout=2, phrase_time_limit=1)
-#     word = r.recognize_google(audio)
-#     if(word.lower() == "jarvis"):
-#         speak("Yeah")
-#         # Listen for command
-#         with sr.Microphone() as source:
-#             print("Jarvis Active...")
-#             audio = r.listen(source)
-#             command = r.recognize_google(audio)
-
-#             processCommand()
