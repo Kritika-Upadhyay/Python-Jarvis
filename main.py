@@ -1,14 +1,21 @@
 import speech_recognition as sr
 import webbrowser 
-import pyttsx3
+import subprocess
 import sounddevice as sd
 
 recognizer = sr.Recognizer()
-engine = pyttsx3.init()
 
 def speak(text):
-    engine.say(text)
-    engine.runAndWait()
+    powershell_command = f'''
+    Add-Type -AssemblyName System.Speech
+    $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer
+    $speak.Speak("{text}")
+    '''
+
+    subprocess.run(
+        ["powershell", "-Command", powershell_command],
+         capture_output=True 
+    )
 
 def processCommand(c):
     pass
@@ -36,7 +43,7 @@ if __name__ == "__main__":
     speak("Initializing Jarvis...")
 
     while True: 
-        print("Listening...")
+        print("Recognizing...")
 
         try:
             
