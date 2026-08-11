@@ -3,8 +3,10 @@ import webbrowser
 import subprocess
 import sounddevice as sd
 import Music_Library
+import requests
 
 recognizer = sr.Recognizer()
+newsapi = "d093053d72bc40248998159804e0e67d"    # Replace with your own API Key
 
 def speak(text):
     powershell_command = f'''
@@ -31,6 +33,33 @@ def processCommand(c):
         webbrowser.open("https://linkedin.com")
     elif "open spotify" in c.lower():
         webbrowser.open("https://spotify.com")
+
+    elif c.lower().startswith("play"):
+        song = c.lower()[5:].strip()
+        link = Music_Library.music[song]
+        webbrowser.open(link)
+
+    elif "news" in c.lower():
+        r = requests.get(f"https://newsapi.org/v2/top-headlines?country=in&apiKey={newsapi}")
+
+        print("News API status: ", r.status_code)
+        
+        if r.status_code == 200:
+            # Parse the JSON response
+            data = r.json()
+
+            # Extract the articles
+            articles = data.get('articles', [])
+            if articles:
+                # Read the headlines
+                for article in articles:
+                    speak(article['title'])
+
+            else:
+                speak("Sorry, I couldn't find any news right now.")
+
+    # else:
+    #     # Let OpenAI handle the request
 
 def listen():
     sample_rate = 16000
