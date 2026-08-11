@@ -2,13 +2,9 @@ import speech_recognition as sr
 import webbrowser 
 import pyttsx3
 import sounddevice as sd
-from faster_whisper import WhisperModel
 
 recognizer = sr.Recognizer()
 engine = pyttsx3.init()
-
-# Load the Whisper model
-model = WhisperModel("base", device="cpu", computer_type="int8")
 
 def speak(text):
     engine.say(text)
@@ -33,29 +29,22 @@ if __name__ == "__main__":
 
         sd.wait()
 
+        # Convert recording to SpeechRecognition AudioData
+        audio = sr.AudioData(
+            recording.tobytes(),
+            sample_rate,
+            2
+        )
+
         print("Recognizing...")
 
-        # Save the recording temporarily as WAV
-        import wave
+        try:
+            text = recognizer.recognize_google(audio)
+            print("Google thinks you said: " + text)
 
-        with wave.open("temp_audio.wav", "wb") as audio_file:
-            audio_file.setnchannels(1)
-            audio_file.setsampwidth(2)
-            audio_file.setframerate(sample_rate)
-            audio_file.writeframes(recording.tobytes())
+        except sr.UnknownValueError:
+            print("Google could not understand audio")
 
-        # Recognize speech using Faster-Whisper
-        segments, info = model.transcribe("temp_audio.wav")
-
-        text = ""
-
-        for segment in segments:
-            text += segment.text
-
-        text = text.strip()
-
-        if text:
-            print("You said: ", text)
-        else:
-            print("Could not understand audio")
+        except sr.RequestError as e:
+            print(f"Google error; {e}")
         
