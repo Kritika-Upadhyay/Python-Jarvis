@@ -1,34 +1,34 @@
 # TEST = 1
 
-import pyttsx3
+# import pyttsx3
 
-engine = pyttsx3.init()
+# engine = pyttsx3.init()
 
-engine.say("First sentence")
-engine.runAndWait()
+# engine.say("First sentence")
+# engine.runAndWait()
 
-print("First finished")
+# print("First finished")
 
-engine = pyttsx3.init()
+# engine = pyttsx3.init()
 
-engine.say("Second sentence")
-engine.runAndWait()
+# engine.say("Second sentence")
+# engine.runAndWait()
 
-print("Second finished")
+# print("Second finished")
 
 
 # TEST = 2
 
-# from dotenv import load_dotenv
-# import os
+from dotenv import load_dotenv
+import os
 
-# load_dotenv()
+load_dotenv()
 
-# openai_api_key = os.getenv("OpenAI_API_KEY")
-# news_api_key = os.getenv("News_API_KEY")
+openai_api_key = os.getenv("OpenAI_API_KEY")
+news_api_key = os.getenv("News_API_KEY")
 
-# print("OpenAI key loaded:", bool(openai_api_key))
-# print("News key loaded:", bool(news_api_key))
+print("OpenAI key loaded:", bool(openai_api_key))
+print("News key loaded:", bool(news_api_key))
 
 
 # TEST = 3
