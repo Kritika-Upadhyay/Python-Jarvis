@@ -1,20 +1,20 @@
 # TEST = 1
 
-# import pyttsx3
+import pyttsx3
 
-# engine = pyttsx3.init()
+engine = pyttsx3.init()
 
-# engine.say("First sentence")
-# engine.runAndWait()
+engine.say("First sentence")
+engine.runAndWait()
 
-# print("First finished")
+print("First finished")
 
-# engine = pyttsx3.init()
+engine = pyttsx3.init()
 
-# engine.say("Second sentence")
-# engine.runAndWait()
+engine.say("Second sentence")
+engine.runAndWait()
 
-# print("Second finished")
+print("Second finished")
 
 
 # TEST = 2
@@ -33,19 +33,19 @@ print("News key loaded:", bool(news_api_key))
 
 # TEST = 3
 
-# from dotenv import load_dotenv
-# import os
-# import requests
+from dotenv import load_dotenv
+import os
+import requests
 
-# load_dotenv()
+load_dotenv()
 
-# news_api_key = os.getenv("News_API_KEY")
+news_api_key = os.getenv("News_API_KEY")
 
-# r = requests.get(
-#     f"https://newsapi.org/v2/top-headlines?country=in&apiKey={news_api_key}",
-#     timeout=10
-# )
+r = requests.get(
+    f"https://newsapi.org/v2/top-headlines?country=in&apiKey={news_api_key}",
+    timeout=10
+)
 
-# print("Status:", r.status_code)
-# print("Response:")
-# print(r.json())
+print("Status:", r.status_code)
+print("Response:")
+print(r.json())
