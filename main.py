@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+import os
+
 import speech_recognition as sr
 import webbrowser 
 import subprocess
@@ -5,8 +8,12 @@ import sounddevice as sd
 import Music_Library
 import requests
 
+load_dotenv()
+
+openai_api_key = os.getenv("OpenAI_API_KEY")
+news_api_key = os.getenv("News_API_KEY")
+
 recognizer = sr.Recognizer()
-newsapi = "d093053d72bc40248998159804e0e67d"    # Replace with your own API Key
 
 def speak(text):
     powershell_command = f'''
@@ -40,7 +47,7 @@ def processCommand(c):
         webbrowser.open(link)
 
     elif "news" in c.lower():
-        r = requests.get(f"https://newsapi.org/v2/top-headlines?country=in&apiKey={newsapi}")
+        r = requests.get(f"https://newsapi.org/v2/top-headlines?country=in&apiKey={news_api_key}")
 
         print("News API status: ", r.status_code)
         
@@ -58,8 +65,9 @@ def processCommand(c):
             else:
                 speak("Sorry, I couldn't find any news right now.")
 
-    # else:
-    #     # Let OpenAI handle the request
+    else:
+        # Let OpenAI handle the request
+        pass
 
 def listen():
     sample_rate = 16000
