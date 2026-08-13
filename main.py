@@ -7,11 +7,14 @@ import subprocess
 import sounddevice as sd
 import Music_Library
 import requests
+from google import genai
 
 load_dotenv()
 
-openai_api_key = os.getenv("OpenAI_API_KEY")
+gemini_api_key = os.getenv("Gemini_API_KEY")
 news_api_key = os.getenv("News_API_KEY")
+
+client = genai.Client(api_key=gemini_api_key)
 
 recognizer = sr.Recognizer()
 
@@ -26,6 +29,14 @@ def speak(text):
         ["powershell", "-Command", powershell_command],
          capture_output=True 
     )
+
+def aiProcess(command):
+    response = client.models.generate_content(
+        model = "gemini-3.6-flash",
+        contents = command 
+    )
+
+    return response.text
 
 def processCommand(c):
     if "open google" in c.lower():
@@ -66,8 +77,9 @@ def processCommand(c):
                 speak("Sorry, I couldn't find any news right now.")
 
     else:
-        # Let OpenAI handle the request
-        pass
+        # Let Gemini handle the request
+        output = aiProcess(c)
+        speak(output)
 
 def listen():
     sample_rate = 16000
