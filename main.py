@@ -122,14 +122,19 @@ if __name__ == "__main__":
                 print(word)
                 speak("Yeah")
 
-                # Listen for command
-                print("Jarvis Active...")
+                while True:
+                    # Listen for command
+                    print("Jarvis Active...")
 
-                audio = listen()
-                command = recognizer.recognize_google(audio)
-                print(command)
+                    audio = listen()
+                    command = recognizer.recognize_google(audio)
+                    print(command)
 
-                processCommand(command)
+                    if command.lower() in ["sleep", "go to sleep", "goodbye", "bye"]:
+                        speak("Going to Sleep")
+                        break
+
+                    processCommand(command)
 
         except Exception as e:
             print(f"Error; {e}")
