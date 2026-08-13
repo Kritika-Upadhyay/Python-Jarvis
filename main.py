@@ -31,9 +31,15 @@ def speak(text):
     )
 
 def aiProcess(command):
+    print("Sending command to Gemini...")
+
     response = client.models.generate_content(
         model = "gemini-3.6-flash",
-        contents = command 
+        contents = f"""
+        You are Jarvis, a voice assistant.
+        Do not use markdown, bullet points, headings, code blocks or special formatting because your response will be spoken aloud.
+        User: {command}
+        """
     )
 
     return response.text
