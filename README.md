@@ -152,26 +152,92 @@ Jarvis/
 
 ## ⚙️ How Jarvis Works
 
-1. 🎙️ **Listens for the wake word**  
-   Jarvis continuously listens through the microphone and waits for the user to say **"Jarvis"**.
+```text
+User says "Jarvis"
+        ↓
+Jarvis detects the wake word
+        ↓
+Jarvis activates and says "Yeah"
+        ↓
+Listens for the user's command
+        ↓
+Converts speech → text
+        ↓
+Checks the command
+        ↓
+ ┌───────────────────────────────┐
+ │                               │
+Predefined command          Other question
+ │                               │
+ ↓                               ↓
+Open website /             Send to Gemini AI
+Play music / News /              │
+Sleep                             ↓
+ │                         Generate response
+ │                               │
+ └───────────────┬───────────────┘
+                 ↓
+          Jarvis speaks response
+                 ↓
+       Continues listening for
+          another command
+                 ↓
+        User says "Sleep"
+                 ↓
+       Returns to wake-word mode
+```
 
-2. 🔊 **Activates**  
-   Once the wake word is recognized, Jarvis responds with **"Yeah"** and enters active mode.
+### 🎙️ Voice Recognition
 
-3. 🗣️ **Recognizes the command**  
-   Jarvis listens to the user's command and converts the speech into text using `SpeechRecognition`.
+Jarvis uses `sounddevice` to record audio from the microphone and `SpeechRecognition` to convert the recorded speech into text.
 
-4. ⚙️ **Processes the command**  
-   The command is checked against predefined actions such as opening websites, playing music, fetching news, or entering sleep mode.
+The assistant listens for the wake word **"Jarvis"** and, once activated, can continuously listen for multiple commands without requiring the wake word again.
 
-5. 🤖 **Uses Gemini when needed**  
-   If the command doesn't match a predefined action, it is sent to the **Google Gemini API** for an AI-generated response.
+### 🗣️ Text-to-Speech
 
-6. 🗣️ **Speaks the response**  
-   Jarvis converts the response into speech using Windows `System.Speech`.
+Jarvis uses the Windows `System.Speech` engine through PowerShell to convert text into spoken responses.
 
-7. 🔁 **Continues listening**  
-   After completing a command, Jarvis remains active and waits for another command without requiring the user to say **"Jarvis"** again.
+This allows Jarvis to speak AI responses, confirmations, and news headlines without requiring an additional text-to-speech service.
 
-8. 😴 **Returns to standby**  
-   When the user says **"sleep"**, **"go to sleep"**, **"go to sleep jarvis"**, **"goodbye"**, or **"bye"**, Jarvis leaves active mode and starts waiting for the wake word again.
+### 🤖 Gemini Integration
+
+Jarvis uses the **Google Gemini API** to handle general questions and commands that are not covered by the predefined functions.
+
+The user's command is sent to Gemini, the generated response is received by Jarvis, and the response is then converted into speech.
+
+Gemini is instructed to avoid Markdown, headings, bullet points, and code blocks because its responses are meant to be spoken aloud.
+
+### 🔐 API Keys & Security
+
+Jarvis requires API keys for **Google Gemini** and **NewsAPI**.
+
+The keys are stored in a `.env` file instead of being written directly into the Python source code.
+
+The `.env` file is included in `.gitignore` so that the API keys are not accidentally uploaded to GitHub.
+
+```text
+Gemini_API_KEY=your_gemini_api_key
+News_API_KEY=your_news_api_key
+```
+
+> **Never share or commit your actual API keys.**
+
+### 🐍 Virtual Environment
+
+The project was developed using a Python virtual environment named `.venv`.
+
+A virtual environment keeps the project's Python packages isolated from the system-wide Python installation and helps prevent dependency conflicts.
+
+### 📦 Requirements
+
+The project includes a `requirements.txt` file containing the Python packages required to run Jarvis.
+
+After creating and activating a virtual environment, the required dependencies can be installed using:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+
