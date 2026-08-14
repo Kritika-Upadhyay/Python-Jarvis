@@ -129,7 +129,7 @@ if __name__ == "__main__":
                     command = recognizer.recognize_google(audio)
                     print(command)
 
-                    if command.lower() in ["sleep", "go to sleep", "goodbye", "bye"]:
+                    if command.lower() in ["sleep", "go to sleep", "goodbye", "bye", "go to sleep jarvis"]:
                         speak("Going to Sleep")
                         break
 
