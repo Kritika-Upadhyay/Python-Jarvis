@@ -4,6 +4,8 @@ Jarvis is a Python-based AI voice assistant that can listen to voice commands, p
 
 The project combines speech recognition, text-to-speech, web automation, APIs, and AI to create a simple personal voice assistant.
 
+---
+
 ## ✨ Features
 
 - 🎙️ Voice-based interaction
@@ -16,6 +18,8 @@ The project combines speech recognition, text-to-speech, web automation, APIs, a
 - 😴 Sleep mode
 - 🔐 API keys stored using environment variables
 - 🛡️ Basic speech-recognition error handling
+
+---
 
 ## 🧠 What Can Jarvis Do?
 
@@ -93,3 +97,36 @@ Jarvis: Opens Spotify
 
 User: Play a song
 Jarvis: Plays the song
+```
+
+---
+
+## 📁 Project Structure
+
+```text
+Jarvis/
+│
+├── main.py
+├── Client.py
+├── Music_Library.py
+├── requirements.txt
+├── .env
+├── .gitignore
+└── README.md
+```
+
+---
+
+## 📄 File Description
+
+| File | Description |
+|---|---|
+| `main.py` | Main Jarvis program containing voice recognition, commands, Gemini integration, news, and continuous listening. |
+| `Client.py` | Used for testing and integrating the Gemini API. |
+| `Music_Library.py` | Stores song names and their corresponding links. |
+| `requirements.txt` | Contains the Python packages required to run the project. |
+| `.env` | Stores API keys such as the Gemini and NewsAPI keys. |
+| `.gitignore` | Prevents sensitive and unnecessary files from being committed. |
+| `README.md` | Project documentation. |
+
+> **Note:** `.env` and `.venv` should never be uploaded to GitHub.
