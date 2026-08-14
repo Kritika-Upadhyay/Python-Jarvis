@@ -90,7 +90,7 @@ def processCommand(c):
 def listen():
     sample_rate = 16000
     duration = 5
-            
+
     recording = sd.rec(
         int(duration * sample_rate),
         samplerate = sample_rate,
@@ -99,7 +99,7 @@ def listen():
     )
             
     sd.wait()
-            
+        
     return sr.AudioData(
         recording.tobytes(),
         sample_rate,
@@ -112,20 +112,19 @@ if __name__ == "__main__":
     while True: 
         print("Recognizing...")
 
-        try:
-            
-            # Listen for wake word
-            audio = listen()
-            word = recognizer.recognize_google(audio)
+        # Listen for wake word
+        audio = listen()
+        word = recognizer.recognize_google(audio)
 
-            if word.lower() == "jarvis":
-                print(word)
-                speak("Yeah")
+        if word.lower() == "jarvis":
+            print(word)
+            speak("Yeah")
 
-                while True:
-                    # Listen for command
-                    print("Jarvis Active...")
+            while True:
+                # Listen for command
+                print("Jarvis Active...")
 
+                try:
                     audio = listen()
                     command = recognizer.recognize_google(audio)
                     print(command)
@@ -136,5 +135,10 @@ if __name__ == "__main__":
 
                     processCommand(command)
 
-        except Exception as e:
-            print(f"Error; {e}")
+                except sr.UnknownValueError:
+                    print("Didn't understand, still listening...")
+                    continue
+
+                except sr.RequestError as e:
+                    print(f"Speech recoginition error: {e}")
+                    continue 
