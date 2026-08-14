@@ -240,4 +240,97 @@ pip install -r requirements.txt
 
 ---
 
+## ⚙️ Installation & Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/your-repository-name.git
+cd Jarvis
+```
+
+### 2. Create a Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+### 3. Activate the Virtual Environment
+
+On Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+### 4. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Create the `.env` File
+
+Create a file named `.env` in the project directory and add your own API keys:
+
+```text
+Gemini_API_KEY=your_gemini_api_key
+News_API_KEY=your_news_api_key
+```
+
+> **Never share or upload your `.env` file or API keys to GitHub.**
+
+### 6. Run Jarvis
+
+```bash
+python main.py
+```
+
+Jarvis will initialize and start listening for the wake word:
+
+```text
+Jarvis
+```
+
+After activation, you can give multiple commands without repeating the wake word.
+
+### 📌 Requirements
+
+- Python 3.x
+- Working microphone
+- Internet connection
+- Google Gemini API key
+- NewsAPI key
+- Windows OS (required for the current `System.Speech` text-to-speech implementation)
+
+---
+
+## 💬 Example Interaction
+
+```text
+Jarvis: Initializing Jarvis...
+
+User: Jarvis
+Jarvis: Yeah
+
+User: Open YouTube
+Jarvis: [Opens YouTube]
+
+User: Open Spotify
+Jarvis: [Opens Spotify]
+
+User: What is Python?
+Jarvis: Python is a high-level, general-purpose programming language known
+for its simplicity, readability, and versatility.
+
+User: Tell me the latest news
+Jarvis: [Reads the latest available headlines]
+
+User: Sleep
+Jarvis: Going to Sleep...
+```
+
+The continuous listening feature allows multiple commands to be given after activating Jarvis, without requiring the wake word before every command.
+
+---
 
