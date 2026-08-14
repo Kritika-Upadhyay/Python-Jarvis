@@ -130,3 +130,48 @@ Jarvis/
 | `README.md` | Project documentation. |
 
 > **Note:** `.env` and `.venv` should never be uploaded to GitHub.
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| **Python** | Main programming language |
+| **SpeechRecognition** | Converts spoken commands into text |
+| **SoundDevice** | Records audio from the microphone |
+| **Google Gemini API** | Handles AI-powered questions and responses |
+| **System.Speech / PowerShell** | Converts text responses into speech |
+| **Webbrowser** | Opens websites through voice commands |
+| **Requests** | Communicates with NewsAPI |
+| **NewsAPI** | Provides news headlines |
+| **python-dotenv** | Loads API keys from the `.env` file |
+| **Git & GitHub** | Version control and project management |
+
+---
+
+## ⚙️ How Jarvis Works
+
+1. 🎙️ **Listens for the wake word**  
+   Jarvis continuously listens through the microphone and waits for the user to say **"Jarvis"**.
+
+2. 🔊 **Activates**  
+   Once the wake word is recognized, Jarvis responds with **"Yeah"** and enters active mode.
+
+3. 🗣️ **Recognizes the command**  
+   Jarvis listens to the user's command and converts the speech into text using `SpeechRecognition`.
+
+4. ⚙️ **Processes the command**  
+   The command is checked against predefined actions such as opening websites, playing music, fetching news, or entering sleep mode.
+
+5. 🤖 **Uses Gemini when needed**  
+   If the command doesn't match a predefined action, it is sent to the **Google Gemini API** for an AI-generated response.
+
+6. 🗣️ **Speaks the response**  
+   Jarvis converts the response into speech using Windows `System.Speech`.
+
+7. 🔁 **Continues listening**  
+   After completing a command, Jarvis remains active and waits for another command without requiring the user to say **"Jarvis"** again.
+
+8. 😴 **Returns to standby**  
+   When the user says **"sleep"**, **"go to sleep"**, **"go to sleep jarvis"**, **"goodbye"**, or **"bye"**, Jarvis leaves active mode and starts waiting for the wake word again.
