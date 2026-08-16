@@ -463,4 +463,58 @@ The project is considered complete in its current learning-project form, with fu
 
 ---
 
+## 👤 Author
 
+**Kritika Upadhyay**
+
+🎓 Computer Science Engineering Student  
+💻 Python Developer & AI Enthusiast
+
+This project is part of my journey of learning Python, software development, and AI.
+
+- 💼 LinkedIn: *www.linkedin.com/in/kritika-u-131189421*
+- 🐙 GitHub: *https://github.com/Kritika-Upadhyay*
+
+Feel free to explore my other projects and connect with me!
+
+---
+
+## 📚 Tutorial & Credits
+
+This project was initially developed by following a tutorial by **CodeWithHarry** as part of my learning process.
+
+The tutorial provided the foundation for the Jarvis voice-assistant project, while the final version includes my own debugging, modifications, testing, dependency management, and improvements.
+
+- 🎓 **Tutorial:** CodeWithHarry — Jarvis AI Assistant Project
+- 💻 **Implementation & Improvements:** Kritika Upadhyay
+
+> Full credit for the original tutorial and teaching material goes to **CodeWithHarry**.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+See the [`LICENSE`](LICENSE) file for more information.
+
+---
+
+## 🙏 Acknowledgements
+
+- 🎓 **CodeWithHarry** — For the tutorial and foundational guidance for the Jarvis project.
+- 🤖 **Google Gemini** — Used for AI-powered responses and general question handling.
+- 🌐 **NewsAPI** — Used for retrieving news headlines.
+- 🐍 **Python Community** — For the libraries, documentation, and resources that supported the development process.
+
+---
+
+## 📝 Final Note
+
+This project was built as part of my journey of learning Python and exploring AI development.
+
+It started as a tutorial-based project and gradually became an opportunity to experiment, debug real-world issues, work with APIs, and understand how different technologies can be combined into a functional application.
+
+🚀 **Jarvis is complete for now, but this is only the beginning of my AI development journey.**
+
+---
