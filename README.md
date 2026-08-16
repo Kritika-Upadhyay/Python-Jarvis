@@ -245,7 +245,7 @@ pip install -r requirements.txt
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repository-name.git
+git clone https://github.com/Kritika-Upadhyay/Python-Jarvis.git
 cd Jarvis
 ```
 
@@ -333,4 +333,53 @@ Jarvis: Going to Sleep...
 The continuous listening feature allows multiple commands to be given after activating Jarvis, without requiring the wake word before every command.
 
 ---
+
+## 🛠️ Development Journey
+
+This project was developed incrementally while learning Python, APIs, virtual environments, speech recognition, and AI integration.
+
+- Started with basic voice input and text-to-speech functionality.
+- Added a wake-word system so Jarvis activates when it hears **"Jarvis"**.
+- Integrated predefined commands for websites, music, and news.
+- Added **Google Gemini** integration to handle general questions and commands.
+- Improved the speech output so long AI responses could be spoken without stopping prematurely.
+- Experimented with different speech-recognition and text-to-speech approaches during development.
+- Added continuous command mode so multiple commands can be given after activating Jarvis.
+- Added a **sleep mode** to return Jarvis to wake-word detection.
+- Troubleshot dependency and compatibility issues, including audio-related packages and `pygame`.
+- Created a virtual environment and generated `requirements.txt` to make the project easier to reproduce.
+- Tested the complete system repeatedly and stabilized the final working version.
+
+This project was built as a learning-focused **Mega Project**, with the goal of understanding how different Python components can be combined to create a functional AI voice assistant.
+
+---
+
+## 🧪 Testing
+
+Jarvis was tested repeatedly throughout development to verify individual features as well as the complete voice-assistant workflow.
+
+### Features Tested
+
+- Wake-word detection using **"Jarvis"**
+- Continuous command listening
+- Sleep mode
+- Opening websites such as Google, YouTube, Spotify, Instagram, Facebook, and LinkedIn
+- Playing songs from the music library
+- Fetching and speaking news headlines
+- Sending general questions to Gemini
+- Speaking Gemini's responses using Windows text-to-speech
+- Handling commands that were not recognized
+- Returning to wake-word detection after sleep mode
+- Running the project inside the `.venv` virtual environment
+
+### Known Limitations
+
+- Speech recognition depends on an active internet connection.
+- Recognition speed can vary depending on network conditions.
+- The current text-to-speech implementation is designed for Windows.
+- Jarvis currently relies on a fixed listening duration for each recording.
+- The music library only supports songs that have been added to `Music_Library.py`.
+
+---
+
 
