@@ -95,7 +95,7 @@ Jarvis: Opens YouTube
 User: Open Spotify
 Jarvis: Opens Spotify
 
-User: Play a song
+User: Play [song name] 
 Jarvis: Plays the song
 ```
 
@@ -132,7 +132,6 @@ Jarvis/
 ├── Client.py
 ├── Music_Library.py
 ├── requirements.txt
-├── .env
 ├── .gitignore
 └── README.md
 ```
@@ -268,7 +267,7 @@ pip install -r requirements.txt
 
 ```bash
 git clone https://github.com/Kritika-Upadhyay/Python-Jarvis.git
-cd Jarvis
+cd Python-Jarvis
 ```
 
 ### 2. Create a Virtual Environment
@@ -472,8 +471,8 @@ The project is considered complete in its current learning-project form, with fu
 
 This project is part of my journey of learning Python, software development, and AI.
 
-- 💼 LinkedIn: *www.linkedin.com/in/kritika-u-131189421*
-- 🐙 GitHub: *https://github.com/Kritika-Upadhyay*
+- 💼 LinkedIn: (https://www.linkedin.com/in/kritika-u-131189421)
+- 🐙 GitHub: (https://github.com/Kritika-Upadhyay)
 
 Feel free to explore my other projects and connect with me!
 
