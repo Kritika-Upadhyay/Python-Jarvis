@@ -101,6 +101,28 @@ Jarvis: Plays the song
 
 ---
 
+## 🎥 Demo & Screenshots
+
+### 🎬 Demo Video
+
+A short screen recording demonstrating Jarvis's main features, including wake-word detection, continuous commands, website automation, music playback, Gemini responses, and sleep mode.
+
+<!-- Will be added soon -->
+
+### 📸 Screenshots
+
+#### Jarvis Running
+
+<!-- Will be added soon -->
+
+#### Gemini Response
+
+<!-- Will be added soon -->
+
+#### Continuous Command Mode
+
+<!-- Will be added soon -->
+
 ## 📁 Project Structure
 
 ```text
@@ -379,6 +401,65 @@ Jarvis was tested repeatedly throughout development to verify individual feature
 - The current text-to-speech implementation is designed for Windows.
 - Jarvis currently relies on a fixed listening duration for each recording.
 - The music library only supports songs that have been added to `Music_Library.py`.
+
+---
+
+## 🚀 Future Improvements
+
+- ⚡ Improve speech-recognition speed and accuracy.
+- 🧠 Add conversational memory.
+- 🎙️ Add more voice commands and automation.
+- 🔊 Improve the text-to-speech voice.
+- 🖥️ Add a graphical user interface (GUI).
+- 🌐 Improve network and error handling.
+- 🎵 Expand the music library.
+- 📰 Improve the news feature.
+- 🤖 Add more advanced AI capabilities.
+
+---
+
+## 📚 What I Learned
+
+- 🐍 Python project structure and modular programming.
+- 🌐 Working with APIs and environment variables.
+- 🎙️ Speech recognition and text-to-speech.
+- 🤖 Google Gemini AI integration.
+- 📦 Virtual environments and dependency management.
+- 🛠️ Error handling and debugging.
+- 🔀 Git and GitHub version control.
+- 🚀 Combining multiple technologies into a complete working project.
+
+---
+
+## 📦 Main Dependencies
+
+- `SpeechRecognition` — Speech-to-text
+- `sounddevice` — Microphone audio recording
+- `google-genai` — Gemini AI integration
+- `requests` — NewsAPI requests
+- `python-dotenv` — Environment variable management
+
+> See [`requirements.txt`](requirements.txt) for the complete list of dependencies.
+
+---
+
+## 📊 Project Status
+
+🟢 **Completed and Functional**
+
+Jarvis is currently working as a functional AI voice assistant with:
+
+- 🎙️ Wake-word detection
+- 🗣️ Voice command recognition
+- 🔁 Continuous command mode
+- 🌐 Website automation
+- 🎵 Music playback
+- 📰 News retrieval
+- 🤖 Gemini AI responses
+- 😴 Sleep mode
+- 🔊 Text-to-speech responses
+
+The project is considered complete in its current learning-project form, with future improvements planned for additional features and better performance.
 
 ---
 
