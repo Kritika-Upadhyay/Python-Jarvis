@@ -109,19 +109,7 @@ A short screen recording demonstrating Jarvis's main features, including wake-wo
 
 <!-- Will be added soon -->
 
-### 📸 Screenshots
-
-#### Jarvis Running
-
-<!-- Will be added soon -->
-
-#### Gemini Response
-
-<!-- Will be added soon -->
-
-#### Continuous Command Mode
-
-<!-- Will be added soon -->
+---
 
 ## 📁 Project Structure
 
