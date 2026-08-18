@@ -107,7 +107,7 @@ Jarvis: Plays the song
 
 A short screen recording demonstrating Jarvis's main features, including wake-word detection, continuous commands, website automation, music playback, Gemini responses, and sleep mode.
 
-<!-- Will be added soon -->
+https://github.com/user-attachments/assets/4b55a0cb-c9dc-4e8b-9f32-da385bcb7bef
 
 ---
 
